@@ -27,10 +27,10 @@ class GitController extends Object:
 
 	func _init(git_manager):
 		self.git_manager = git_manager;
-		self.branches = preload("res://addons/godot-git-control.funabab/scripts/git_branch_manager.gd").GitBranchManager.new(self);
-		self.remotes = preload("res://addons/godot-git-control.funabab/scripts/git_remote_manager.gd").GitRemoteManager.new(self);
-		self.workspace = preload("res://addons/godot-git-control.funabab/scripts/git_workspace_manager.gd").GitWorkspaceManager.new(self);
-		self.views = preload("res://addons/godot-git-control.funabab/scripts/git_view_manager.gd").GitViewManager.new(self.git_manager);
+		self.branches = load("res://addons/godot-git-control.funabab/scripts/git_branch_manager.gd").GitBranchManager.new(self);
+		self.remotes = load("res://addons/godot-git-control.funabab/scripts/git_remote_manager.gd").GitRemoteManager.new(self);
+		self.workspace = load("res://addons/godot-git-control.funabab/scripts/git_workspace_manager.gd").GitWorkspaceManager.new(self);
+		self.views = load("res://addons/godot-git-control.funabab/scripts/git_view_manager.gd").GitViewManager.new(self.git_manager);
 		self.git_manager.connect("cmd_processed", self, "_on_cmd_ok");
 		pass
 
@@ -107,6 +107,7 @@ class GitController extends Object:
 		pass
 
 	
+
 
 
 

@@ -54,3 +54,4 @@ class GitignoreManager extends Object:
 		pass
 
 
+

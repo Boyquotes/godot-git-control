@@ -6,16 +6,16 @@ class GitManager extends Object:
 	var remotes;
 	var controller;
 	var CMD;
-	var Utils = preload("res://addons/godot-git-control.funabab/scripts/utils.gd").Utils.new();
+	var Utils = load("res://addons/godot-git-control.funabab/scripts/utils.gd").Utils.new();
 	var settings;
 	signal cmd_processed;
 
 	func _init(base_control, settings_manager):
 		self.base_control = base_control;
 		self.settings = settings_manager;
-		self.cmd_manager = preload("res://addons/godot-git-control.funabab/scripts/command_manager.gd").CommandManager.new(self);
-		self.CMD = preload("res://addons/godot-git-control.funabab/scripts/cmd.gd").CMD;
-		self.controller = preload("res://addons/godot-git-control.funabab/scripts/git_controller.gd").GitController.new(self);
+		self.cmd_manager = load("res://addons/godot-git-control.funabab/scripts/command_manager.gd").CommandManager.new(self);
+		self.CMD = load("res://addons/godot-git-control.funabab/scripts/cmd.gd").CMD;
+		self.controller = load("res://addons/godot-git-control.funabab/scripts/git_controller.gd").GitController.new(self);
 		pass
 
 	func _run_refresh(show_in_console = false):
@@ -193,3 +193,4 @@ class GitManager extends Object:
 	func _on_cmd_processed(cmd):
 		self.emit_signal("cmd_processed", cmd);
 		pass
+

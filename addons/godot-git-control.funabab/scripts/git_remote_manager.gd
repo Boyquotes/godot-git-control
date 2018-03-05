@@ -44,7 +44,7 @@ class GitRemoteManager extends Object:
 			return;
 		var split = cmd_remote_result[0][0].c_escape().split("\\n", false);
 		for val in split:
-			var chunk = val.split("\\t");
+			chunk = val.split("\\t");
 			remote_name = chunk[0].strip_edges();
 			remote_url = chunk[1].substr(0, chunk[1].find_last(" ")).strip_edges();
 			remote_url_type = chunk[1].right(chunk[1].find_last(" ")).strip_edges();
@@ -85,4 +85,5 @@ class GitRemoteManager extends Object:
 		func _set_push_url(url):
 			self.push_url = url;
 			pass
+
 

@@ -24,7 +24,7 @@ func _show_dialog():
 	get_node("container/tag_commit/input").set_text("");
 	get_node("container/tag_message/input").set_text("");
 	self.hide_errors();
-	self.set_pos(Vector2((base_control.get_viewport_rect().size.x - self.get_rect().size.x) / 2, (base_control.get_viewport_rect().size.y - self.get_rect().size.y) / 2));
+	self.set_position(Vector2((base_control.get_viewport_rect().size.x - self.get_rect().size.x) / 2, (base_control.get_viewport_rect().size.y - self.get_rect().size.y) / 2));
 	self.show();
 	pass
 
@@ -59,3 +59,4 @@ func _on_action_pressed(custom_action = null):
 		self.emit_signal("on_create_tag", tag_name, tag_commit_ref, tag_message, true);
 	self.hide();##Optional, infact not compulsory
 	pass
+

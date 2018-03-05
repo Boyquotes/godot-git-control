@@ -23,12 +23,13 @@ func _show_dialog(selected_files, message = null):
 		message = "Revert will erase changes in selected files since last commit\nAre you sure to continue?";
 	self.selected_files = selected_files;
 	self.set_text(message);
-	self.set_pos(Vector2((base_control.get_viewport_rect().size.x - self.get_rect().size.x) / 2, (base_control.get_viewport_rect().size.y - self.get_rect().size.y) / 2));
+	self.set_position(Vector2((base_control.get_viewport_rect().size.x - self.get_rect().size.x) / 2, (base_control.get_viewport_rect().size.y - self.get_rect().size.y) / 2));
 	self.show();
 	pass
 
 func _on_action_pressed():
 	self.emit_signal("on_revert", self.selected_files);
 	pass
+
 
 

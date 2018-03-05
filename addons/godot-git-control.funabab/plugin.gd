@@ -2,22 +2,22 @@ tool
 extends EditorPlugin
 
 var git_manager;
-var git_control = preload("res://addons/godot-git-control.funabab/controls/git_control.tscn").instance();
-var git_toolbar = preload("res://addons/godot-git-control.funabab/controls/git_notification_toolbar.tscn").instance();
+var git_control = load("res://addons/godot-git-control.funabab/controls/git_control.tscn").instance();
+var git_toolbar = load("res://addons/godot-git-control.funabab/controls/git_notification_toolbar.tscn").instance();
 var settings_manager = SettingsManager.new();
 var plugin_mode;
 var git_control_toolbutton;
 var fatal_error = false;
 
 func _enter_tree():
-	self.git_manager = preload("res://addons/godot-git-control.funabab/scripts/git_manager.gd").GitManager.new(self.get_base_control(), self.settings_manager);
+	self.git_manager = load("res://addons/godot-git-control.funabab/scripts/git_manager.gd").GitManager.new(self.get_base_control(), self.settings_manager);
 	if (self.startup_error()):
 		self.fatal_error = true;
 		git_manager.free();
 		git_control.free();
 		return;
 
-	var GitignoreManager = preload("res://addons/godot-git-control.funabab/scripts/gitignore_manager.gd").GitignoreManager;
+	var GitignoreManager = load("res://addons/godot-git-control.funabab/scripts/gitignore_manager.gd").GitignoreManager;
 	var git_ignore = GitignoreManager.new("res://.gitignore");
 	git_ignore.add_exclusion("addons/godot-git-control.funabab/");
 	git_ignore.write_all();
@@ -61,7 +61,7 @@ func show_fatal_error(msg):
 	accept_dialog.set_title("Git Control");
 	accept_dialog.set_text(msg);
 	accept_dialog.set_exclusive(true);
-	accept_dialog.set_pos(Vector2((self.get_base_control().get_viewport_rect().size.x - accept_dialog.get_rect().size.x) / 2, (self.get_base_control().get_viewport_rect().size.y - accept_dialog.get_rect().size.y) / 2));
+	accept_dialog.set_position(Vector2((self.get_base_control().get_viewport_rect().size.x - accept_dialog.get_rect().size.x) / 2, (self.get_base_control().get_viewport_rect().size.y - accept_dialog.get_rect().size.y) / 2));
 	accept_dialog.show();
 	self.get_base_control().add_child(accept_dialog);
 	pass
@@ -87,6 +87,9 @@ func _on_action_event(what, args):
 		self.git_control_toolbutton.add_color_override("font_color", Color("bc8e8e"));
 		self.git_control_toolbutton.add_color_override("font_color_hover", Color("bc8e8e"));
 	pass
+
+func get_base_control():
+	return get_editor_interface().get_base_control()
 
 class SettingsManager:
 	var settings_path = "res://addons/godot-git-control.funabab/user_settings.cfg";
@@ -129,3 +132,4 @@ class SettingsManager:
 
 		return value;
 		pass
+

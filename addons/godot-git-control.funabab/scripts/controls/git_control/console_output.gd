@@ -34,3 +34,4 @@ func _on_cmd_ok(cmd):
 	elif (cmd_type == self.root_control.git_manager.cmd_manager.CMD_GIT_COMMIT):
 		self.console_write();
 	pass
+

@@ -32,3 +32,4 @@ class CMD:
 	func _get_results():
 		return self.results;
 		pass
+

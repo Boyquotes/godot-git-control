@@ -98,3 +98,4 @@ class GitViewManager extends Object:
 	func _on_merge_branch(merge_branch, no_fast_forward):
 		self.git_manager._run_cmd_merge(merge_branch, no_fast_forward);
 		pass
+

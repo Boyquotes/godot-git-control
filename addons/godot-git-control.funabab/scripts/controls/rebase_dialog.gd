@@ -21,7 +21,7 @@ func _params(base_control):
 func _show_dialog(current_branch, branches):
 	get_node("container/current_branch/input").set_text(current_branch);
 	self.update_branch_options(branches);
-	self.set_pos(Vector2((base_control.get_viewport_rect().size.x - self.get_rect().size.x) / 2, (base_control.get_viewport_rect().size.y - self.get_rect().size.y) / 2));
+	self.set_position(Vector2((base_control.get_viewport_rect().size.x - self.get_rect().size.x) / 2, (base_control.get_viewport_rect().size.y - self.get_rect().size.y) / 2));
 	self.show();
 	pass
 
@@ -38,3 +38,4 @@ func _on_action_pressed():
 	var branches = get_node("container/rebase_on_branch/branches");
 	self.emit_signal("on_rebase", branches.get_item_text(branches.get_selected()));
 	pass
+

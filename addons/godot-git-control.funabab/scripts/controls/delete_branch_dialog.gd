@@ -23,7 +23,7 @@ func _params(base_control):
 func _show_dialog(branch_name):
 	self.branch_name = branch_name;
 	get_node("label").set_text("Are you sure to delete Branch '" + branch_name + "'?");
-	self.set_pos(Vector2((self.base_control.get_viewport_rect().size.x - self.get_rect().size.x) / 2, (self.base_control.get_viewport_rect().size.y - self.get_rect().size.y) / 2));
+	self.set_position(Vector2((self.base_control.get_viewport_rect().size.x - self.get_rect().size.x) / 2, (self.base_control.get_viewport_rect().size.y - self.get_rect().size.y) / 2));
 	self.show();
 	pass
 
@@ -34,3 +34,4 @@ func _on_action_pressed(custom_action = null):
 		self.emit_signal("on_delete_confirmed", self.branch_name, true);
 	self.hide();
 	pass
+

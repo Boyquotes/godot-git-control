@@ -6,9 +6,9 @@ tool
 extends Tree
 
 var root_control;
-var dropdown_icon = preload("res://addons/godot-git-control.funabab/images/dropdown.png");
-var checked_icon = preload("res://addons/godot-git-control.funabab/images/checked.png");
-var unchecked_icon = preload("res://addons/godot-git-control.funabab/images/unchecked.png");
+var dropdown_icon = load("res://addons/godot-git-control.funabab/images/dropdown.png");
+var checked_icon = load("res://addons/godot-git-control.funabab/images/checked.png");
+var unchecked_icon = load("res://addons/godot-git-control.funabab/images/unchecked.png");
 
 var root_item;
 var root_item_bg_color = Color("312e37");
@@ -197,4 +197,5 @@ func _on_action_event(what, args):
 	elif (what == self.root_control.git_manager.controller.ACTION_REVERT_WORKSPACE_TREE_SELECTED_FILES):
 		self.root_control.git_manager.controller._show_view_revert_confirm_dialog(self.get_item_selected_children_file_path(self.root_item));
 	pass
+
 

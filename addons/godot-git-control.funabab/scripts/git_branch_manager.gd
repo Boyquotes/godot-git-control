@@ -75,3 +75,4 @@ class GitBranchManager extends Object:
 	func get_branches_count():
 		return self.branches.size();
 		pass
+

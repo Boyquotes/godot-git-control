@@ -23,7 +23,7 @@ func _params(base_control):
 func _show_dialog(current_branch, branches):
 	self.get_node("container/current_branch/input").set_text(current_branch);
 	self.update_branch_options(branches);
-	self.set_pos(Vector2((base_control.get_viewport_rect().size.x - self.get_rect().size.x) / 2, (base_control.get_viewport_rect().size.y - self.get_rect().size.y) / 2));
+	self.set_position(Vector2((base_control.get_viewport_rect().size.x - self.get_rect().size.x) / 2, (base_control.get_viewport_rect().size.y - self.get_rect().size.y) / 2));
 	self.show();
 	pass
 
@@ -44,3 +44,4 @@ func _on_action_pressed():
 func _on_checkbox_toggled(toggle):
 	self.no_fast_forward = toggle;
 	pass
+
