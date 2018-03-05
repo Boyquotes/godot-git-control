@@ -4,7 +4,7 @@
 
 This is a simple Git Integration plugin for @godotengine
 
-![ScreenShot](https://dl.dropboxusercontent.com/s/pwulhqvnymn7dvh/screenshot_godot_git_control.png?dl=0)
+![Screenshot](https://raw.githubusercontent.com/deep-gaurav/godot-git-control/master/Screenshot_20180305_172510.png)
 
 Currently this plugin is in alpha, but does not mean it's not currently usable, if you encounter any bug, please let me know.
 
