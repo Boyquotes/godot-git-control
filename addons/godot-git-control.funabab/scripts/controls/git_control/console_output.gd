@@ -13,6 +13,7 @@ func _enter_tree():
 	self.root_control.git_manager.controller.connect("action_event", self, "_on_action_event");
 	self.root_control.git_manager.connect("cmd_processed", self, "_on_cmd_ok");
 	self.console_write("@funabab (c) 2016");
+	self.console_write("Deep Gaurav (c) 2018")
 	pass
 
 func console_write(msg = ""):
