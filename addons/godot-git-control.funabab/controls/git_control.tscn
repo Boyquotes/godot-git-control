@@ -136,6 +136,7 @@ margin_left = 138.0
 margin_right = 166.0
 margin_bottom = 24.0
 rect_pivot_offset = Vector2( 0, 0 )
+hint_tooltip = "Delete branch"
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
